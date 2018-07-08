@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1> <%= kitties.name%> details:</h1>
+        <% for (kitty in kitties) { %>
+            <h3><%= kitties.age%> years old</h3>
+            <h3><%= kitties.hobbies%></h3>
+        <% } %>
+        <h2>Favorite toys:</h2>
+        <% for (var i = 0 ; i < kitties.favetoys.length ; i ++) { %>
+            <h3><%= kitties.favetoys[i] %></h3>
+        <% } %>
+    </body>
+</html>
