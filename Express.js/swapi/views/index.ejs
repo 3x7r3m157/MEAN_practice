@@ -1,0 +1,25 @@
+<!-- <script type="text/javascript"> -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <button id="peopleBtncopy">People</button>
+    </body>
+    <script type="text/javascript">
+    <script>
+        $(document).ready(function(){
+            $('#peopleBtn').click(function(){
+                // let's make the request to our OWN server!
+                $.get('/people', function(data){
+                    // log the data to be sure we have it before we dive into manipulating the DOM
+                    console.log("got the data", data);
+                }, 'json');
+            });
+        });
+    </script>
+</html>
+</script>

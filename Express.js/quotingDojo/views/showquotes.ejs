@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <%= quotes %>
+        <% for (let idx in quotes) { %>
+            <h1>Quote: <%= quotes[idx].quote %></h1>
+            <h3>-<%= quotes[idx].name %> at <%=quotes[idx].createdAt %> </h3>
+        <% } %>
+    </body>
+</html>
