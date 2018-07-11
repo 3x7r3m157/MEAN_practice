@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>hit monkey dash</h1>
+        <a href="/newmonkey">Create New Monkey</a>
+        <% for (let idx in monkeys) { %>
+            <a href="/monkeys/<%=monkeys[idx].id%>"><h3>Name: <%= monkeys[idx].name %></h3></a>
+            <h3>Age: <%= monkeys[idx].age %></h3>
+            <h3>Favorite Hobbies: <%= monkeys[idx].favoritehobbies %></h3>
+            <a href="/editmonkey/<%=monkeys[idx].id%>">Edit</a>
+            <a href="/delete/<%=monkeys[idx]._id%>">Delete</a>
+        <% } %>
+    </body>
+</html>

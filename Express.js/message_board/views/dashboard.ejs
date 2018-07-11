@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <form class="post" action="/processpost" method="post">
+            Post Title: <input type="title" name="title" value="">
+            By: <input type="text" name="name" value=""><br>
+            Post: <textarea name="text" rows="8" cols="80"></textarea>
+            <input type="submit" name="submit" value="Submit Post">
+        </form>
+        <% for (let idx of posts) { %>
+            <h2>Post: <%= idx.title%></h2>
+            <h3>-<%= idx.name%></h3>
+            <h4><%= idx.text%></h4>
+            <% if (idx.comment) { %>
+                <% for (let ix of idx.comment) { %>
+                    <%= ix.text %><br>
+                    Said <%= ix.name %><br>
+                <% } %>
+            <% } %>
+            <form class="post" action="/processcomment/<%= idx.id%>" method="post">
+                Comment: <input type="text" name="text" value="">
+                By: <input type="text" name="name" value=""><br>
+                <input type="submit" name="submit" value="Submit Comment">
+            </form>
+        <% } %>
+    </body>
+</html>
